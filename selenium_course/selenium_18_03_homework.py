@@ -5,9 +5,12 @@ from time import sleep
 
 class test_saudemo:
     
+    error_area_xpath = "/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3"
+    
     def __init__(self):
         
         self.go_page()
+        
         self.page_elements()
         
     def page_elements(self):
@@ -26,16 +29,18 @@ class test_saudemo:
         
         self.driver.get("https://www.saucedemo.com/")
         
-    
-    def click(self):
-        
-        self.loginButton.click()    
         
     def refresh(self):
         
         self.driver.refresh()
         
-        self.page_elements()
+        self.page_elements()    
+        
+    
+    def click(self):
+        
+        self.loginButton.click()    
+    
         
     def wrong_id_or_password(self):
                 
@@ -45,7 +50,7 @@ class test_saudemo:
         
         self.click()
         
-        self.error_message = self.driver.find_element(By.XPATH, "/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3")
+        self.error_message = self.driver.find_element(By.XPATH, test_saudemo.error_area_xpath)
         
         print(self.error_message.text)
         
@@ -62,7 +67,7 @@ class test_saudemo:
         
         self.click()
         
-        self.error_message = self.driver.find_element(By.XPATH, "//*[@id='login_button_container']/div/form/div[3]/h3")
+        self.error_message = self.driver.find_element(By.XPATH, test_saudemo.error_area_xpath)
         
         print(self.error_message.text)
         
@@ -78,7 +83,7 @@ class test_saudemo:
         
         self.click() 
         
-        self.error_message = self.driver.find_element(By.XPATH, "/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3")
+        self.error_message = self.driver.find_element(By.XPATH, test_saudemo.error_area_xpath)
         
         print(self.error_message.text)
 
@@ -106,4 +111,3 @@ instance.wrong_id_or_password()
 instance.fill_id_empty_password()
 instance.special_selection()
 instance.true_information()       
-       
