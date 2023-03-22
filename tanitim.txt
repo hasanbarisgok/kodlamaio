@@ -1,0 +1,2 @@
+Bu repo'da, kodlama.io sitesinde verilen canlı öğrenimlerin ödevlerini, quizlerini paylaşmaktayım.
+I'm sharining homeworks, and quizzes of live courses from kodlama.io website in this repository.
